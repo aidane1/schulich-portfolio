@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/index.css" />
+	<title>Schulich Leaders 2020</title>
+</head>
+
+<body>
+	<% if (query.success === "true" || query.success === "false") { %>
+	<div id="message-box" style="border-left-color: <%=query.success==='true' ? '#2aeb5e': '#f7502a' %>">
+		<%=query.message%>
+	</div>
+	<% } %>
+	<div class="container">
+		<div class="leader-list">
+
+
+			<% leaders.forEach(leader => { %>
+			<div class="leader">
+				<div class="leader-top">
+					<div class="leader-name">
+						<%=leader.name%>
+					</div>
+					<div class="leader-school">
+						<%=leader.school%>
+					</div>
+				</div>
+				<div class="leader-bottom">
+					<div class="leader-bio">
+						<%=leader.bio%>
+					</div>
+				</div>
+			</div>
+			<% }) %>
+
+		</div>
+		<form action="/" method="POST" class="add-leader">
+			<input value="<%=query.name || ''%>" type="text" name="name" placeholder="Name" />
+			<input value="<%=query.email || ''%>" type="email" name="email" placeholder="Email" />
+			<input value="<%=query.phone || ''%>" type="phone" name="phone" placeholder="Phone" />
+			<select value="<%=query.school || ''%>" name="school">
+				<option value="University of British Columbia">University of British Columbia</option>
+				<option value="Queens University">Queens University</option>
+				<option value="McGill University">McGill University</option>
+				<option value="York University">York University</option>
+				<option value="Western University">Western University</option>
+				<option value="McMaster University">McMaster University</option>
+				<option value="McMaster University">Memorial University</option>
+				<option value="Simon Fraser University">Simon Fraser University</option>
+				<option value="Dalhousie University">Dalhousie University</option>
+				<option value="University of Toronto">University of Toronto</option>
+				<option value="University of Ottawa">University of Ottawa</option>
+				<option value="University of Victoria">University of Victoria</option>
+				<option value="University of Saskatchewan">University of Saskatchewan</option>
+				<option value="University of Saskatchewan">University of Manitoba</option>
+				<option value="University of New Brunswick">University of New Brunswick</option>
+				<option value="University of Alberta">University of Alberta</option>
+				<option value="University of Waterloo">University of Waterloo</option>
+				<option value="University of Calgary">University of Calgary</option>
+				<option value="Université Laval">Université Laval</option>
+				<option value="University de Montreal">Université de Montréal</option>
+			</select>
+			<textarea name="bio" placeholder="Description/Bio" rows="10"><%=query.bio || ''%></textarea>
+			<button type="submit">Create</button>
+		</form>
+	</div>
+
+</body>
+
+<script>
+
+	window.onload = () => {
+		let element = document.getElementById("message-box");
+		if (element) {
+			setTimeout(() => {
+				element.classList.add("message-done");
+			}, 1000);
+		}
+	}
+</script>
+
+</html>

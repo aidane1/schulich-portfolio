@@ -1,0 +1,24 @@
+{
+    "development": {
+        "config_id": "development",
+		"app_name": "Schulich App",
+		"app_base_url": "http://localhost:8888",
+		"api_base_url": "http://localhost:1337",
+		"api_public_url": "http://localhost:1337",
+		"app_desc": "Aidan Eglin's blog",
+        "node_port": 8888,
+        "database": "mongodb://127.0.0.1:27017/schulich",
+        "update_info": false
+    },
+    "production": {
+        "config_id": "production",
+		"app_name": "Programmable",
+		"app_base_url": "http://159.65.72.108:8888",
+		"api_base_url": "http://localhost:1337",
+		"api_public_url": "http://159.65.72.108:1337",
+		"app_desc": "Aidan Eglin's blog",
+        "node_port": 8888,
+        "database": "mongodb://127.0.0.1:27017/schulich",
+        "update_info": false
+    }
+}

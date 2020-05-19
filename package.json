@@ -1,0 +1,40 @@
+{
+	"name": "schulich",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start-dev": "NODE_ENV=development nodemon index.js",
+		"start-prod": "NODE_ENV=production nodemon index.js",
+		"develop": "NODE_ENV=development node index.js",
+		"start": "NODE_ENV=production nodemon index.js",
+		"test": "find ./tests -name '*.js' | xargs mocha -R spec"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"base36id": "^1.0.3",
+		"body-parser": "^1.19.0",
+		"connect-mongo": "^3.2.0",
+		"cookie-parser": "^1.4.5",
+		"ejs": "^3.1.2",
+		"express": "^4.17.1",
+		"express-session": "^1.17.1",
+		"helmet": "^3.22.0",
+		"highlight.js": "^10.0.2",
+		"moment": "^2.25.3",
+		"mongoose": "^5.9.15",
+		"request": "^2.88.2",
+		"showdown": "^1.9.1",
+		"showdown-highlightjs-extension": "^0.1.2",
+		"showdown-prettify": "^1.3.0",
+		"strapi": "^3.0.0-beta.20.3"
+	},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^7.1.2",
+		"pm2": "^4.4.0"
+	}
+}
